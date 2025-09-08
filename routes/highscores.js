@@ -20,7 +20,7 @@ router.get('/list', urlencodedParser, function(req, res, next) {
         }
 
         // Retrieve the top 10 high scores
-        var col = db.collection('highscore');
+        var col = db.collection('highscores');
         col.find({}).sort([['score', -1]]).limit(10).toArray(function(err, docs) {
             var result = [];
             if (err) {
